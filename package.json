@@ -1,0 +1,17 @@
+{
+  "name": "babel-plugin-version",
+  "version": "0.2.1",
+  "description": "babel plugin replace define identifier `__VERSION__` to pkg.version!",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "rm -rf lib && babel test -d lib"
+  },
+  "keywords": [
+    "babel-plugin",
+    "version"
+  ],
+  "devDependencies": {
+    "babel-cli": "^6.26.0"
+  },
+  "license": "MIT"
+}
