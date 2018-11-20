@@ -3,3 +3,4 @@
 lib
 test
 node_modules
+.travis.yml
