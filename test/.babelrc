@@ -1,5 +1,9 @@
 {
   "plugins": [
-    ["../src/", { "define": "__VERSION__" }]
+    ["../src/", {
+      "define": "__VERSION__",
+      "identifier": true,
+      "stringLiteral": true
+    }]
   ]
 }

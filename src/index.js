@@ -8,9 +8,23 @@ module.exports = function (_ref) {
 
   return {
     visitor: {
+      // __VERSION__
       ReferencedIdentifier: function(path, state) {
+        var identifier = state.opts.identifier;
+        var transform = identifier === undefined ? true : identifier; // 默认转换
+
         var define = state.opts.define || '__VERSION__'; // 默认值
-        if (path.node.name === define) {
+        if (transform && path.node.name === define) {
+          path.replaceWith(t.valueToNode(version));
+        }
+      },
+      // "__VERSION__"
+      StringLiteral: function(path, state) {
+        var stringLiteral = state.opts.stringLiteral;
+        var transform = stringLiteral === undefined ? true : stringLiteral;
+
+        var define = state.opts.define || '__VERSION__';
+        if (transform && path.node.value === define) {
           path.replaceWith(t.valueToNode(version));
         }
       }

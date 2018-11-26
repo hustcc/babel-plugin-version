@@ -1,7 +1,7 @@
 {
   "name": "babel-plugin-version",
-  "version": "0.2.2",
-  "description": "babel plugin replace define identifier `__VERSION__` to pkg.version!",
+  "version": "0.2.3",
+  "description": "babel plugin replace define Identifier / StringLiteral `__VERSION__` to pkg.version!",
   "main": "src/index.js",
   "scripts": {
     "test": "rm -rf lib && babel test -d lib"

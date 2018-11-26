@@ -1,8 +1,9 @@
 # babel-plugin-version
 
-A babel plugin replace define Identifier to pkg.version!
+A babel plugin replace define Identifier / StringLiteral to pkg.version!
 
 [![npm](https://img.shields.io/npm/v/babel-plugin-version.svg)](https://www.npmjs.com/package/babel-plugin-version)
+[![npm](https://img.shields.io/npm/dm/babel-plugin-version.svg)](https://www.npmjs.com/package/babel-plugin-version)
 
 
 ## Install
@@ -30,7 +31,7 @@ Add it into `.babelrc`.
 ## Result
 
 
- - In
+ - Input
 
 ```js
 const a = { a: __VERSION__ };
@@ -41,6 +42,7 @@ const c = [__VERSION__];
 
 const d =__VERSION__ = 1;
 
+const e = "__VERSION__";
 ```
 
  - Output
@@ -53,6 +55,8 @@ const b = a === "0.1.0";
 const c = ["0.1.0"];
 
 const d = __VERSION__ = 1;
+
+const e = "0.1.0";
 ```
 
 
@@ -65,7 +69,11 @@ You can customize the default `__VERSION__` define.
 ```json
 {
   "plugins": [
-    ["version", { "define": "__PKG_VERSION__" }]
+    ["version", {
+      "define": "__PKG_VERSION__",
+      "identifier": false,
+      "stringLiteral": true 
+     }]
   ]
 }
 ```
