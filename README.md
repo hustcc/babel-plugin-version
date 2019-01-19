@@ -78,6 +78,10 @@ You can customize the default `__VERSION__` define.
 }
 ```
 
+ - **define**, `string`. Default `__VERSION__`. Define the keyword string which will be transformed.
+ - **identifier**, `boolean`. Default `true`. Whether transform identifier which's name is equal `define` string.
+ - **stringLiteral**, `boolean`. Default `true`. Whether transform string variable which is equal `define` string.
+
 
 
 ## Test
